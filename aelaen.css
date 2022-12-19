@@ -309,16 +309,15 @@ filter: grayscale(1);
 
 header{
 	position: sticky; 
-	top: 10px;
 	z-index: 999; 
 	border-bottom: solid 1px rgb(204, 204, 204); 
 	padding-left: 10px; 
 	padding-right: 10px; 
 	width: inherit;
-	height: 70px;
+	height: 90px;
 	margin: auto; 
 	background-color: white; 
-	top: 0px;
+	top: 0
 }
 .container{
 	width:98%;
@@ -330,11 +329,12 @@ header{
 .first-grid{
 	display: grid; 
 	grid-template-columns: 50% 50%; 
-	height: 50px; 
-	align-content: center; 
+	height: 50px;  
 	width: 90%;
 	margin: auto; 
-	padding: 2px
+	padding: 2px; 
+	margin-top: 10px
+	
 	
 
 }
@@ -345,12 +345,12 @@ header{
 
 .topmenu{
 	display: grid; 
-	grid-template-columns: 90% auto ;
-	align-content: center; 
+	grid-template-columns: 100% auto ;
 	
-	padding-left: 5px
+	padding-left: 25px
 }
-.topmenu-1 {
+.topmenu-1 {display: grid;
+	grid-template-columns: 20% auto 
 	
 }
 .topmenu-1 > a  {
@@ -363,7 +363,9 @@ header{
 	position : relative
 	
 }
-
+.topmenu-2{
+	padding: 50% 0 ;
+}
 #relou{
 	padding: 1px
 }
@@ -379,6 +381,26 @@ header{
   transition: transform 0.25s ease-out;
 }
 #relou:hover:after{
+	 transform: scaleX(1);
+  transform-origin: center;
+	
+}
+
+#relou2{
+	padding: 1px
+}
+#relou2:after{
+	  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  transition: transform 0.25s ease-out;
+}
+#relou2:hover:after{ 
 	 transform: scaleX(1);
   transform-origin: center;
 	
@@ -431,8 +453,7 @@ color: black;
 }
 
 .hover{
-	font-size : 30px; 
-	transform: perspective(10px); 
+	font-size : 10px; ; 
 }
 
 .alex{
@@ -447,3 +468,112 @@ color: black;
 opacity : 1
 	
 }
+
+.dropdown {
+    position: absolute;
+    width: 300px;
+	height: 95px; 
+    right: 0;
+	top: 100%; 
+    z-index: 1;
+	opacity: 0; 
+	transition : 1s; 
+	padding : 5px
+		
+}
+
+.ok{
+opacity: 1 ; 
+	background: white; 
+	border-bottom-left-radius: 10px; 
+	
+}
+/*  dropdown menu */
+.menu {
+    height: 60px;
+    list-style: none;
+	display: inline-flex; 
+	padding-top:  3%; 
+	
+}
+
+.menu li {
+    float: left;
+    width: 100px;
+}
+
+
+.menu .sousmenu {
+	height: auto;
+    list-style-type: none;
+    /*opacity: 0 ; */
+    padding: 0;
+    margin: 0;
+	padding-top: 50px; 
+	width: 80px; 	
+}
+
+.menu .sousmenu li {
+    float: none;
+    margin: 0;
+    padding: 10px;
+    border-top: 1px solid transparent;
+    border-right: 1px solid transparent; 
+
+}
+.menu .sousmenu li:hover{
+	background : rgba(234,234,234,0.54);
+	border-radius: 5px
+}
+
+
+
+.menu li:hover ul.sousmenu {
+    display: block;
+	opacity: 1;
+	transition-duration: 1s; 
+}
+
+
+    ul li ul.sousmenu{
+        min-width: ; /* Set width of the dropdown */
+        background: white;
+        display: none;
+        z-index: 999;
+    }
+
+    ul li:hover ul.sousmenu{
+        display: block;	
+/* Display the dropdown */
+    }
+  
+  ul li ul.sousmenu li{
+        display: block;
+		
+    }
+
+/*  soulignement hover */
+.menu .sousmenu li a:after{
+	  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  transition: transform 0.25s ease-out;
+}
+.menu .sousmenu li a:hover:after{
+	 transform: scaleX(1);
+  transform-origin: center;
+	
+}
+/*  soulignement hover */
+
+
+/*  dropdown menu */
+
+ 
+
+ 

@@ -1,24 +1,38 @@
 
 
-let titre = document.querySelector('.title'); 
-let alex = document.querySelector('.alex'); 
-
+let alex = document.querySelector('img.alex'); 
+let about = document.querySelector('#relou2'); 
+let dropdown = document.querySelector('.dropdown'); 
 
 function hover(e, enter, leave) {
-	e.addEventListener('mouseenter', enter); 
+	e.addEventListener('mouseenter', enter); ; 
  e.addEventListener('mouseleave', leave); 
 }
 
-hover(titre, ()=> titre.classList.add('hover'), ()=> titre.classList.remove('hover')); 
+																	
 
+hover(alex,
+	  ()=> { alex.classList.add('hoverimg')}, 
+	  ()=> {alex.classList.remove('hoverimg')}
+	 ); 
 
-alex.addEventListener('mouseenter', ()=> { alex.classList.add('hoverimg'); 
-					 console.log('salut')})
+hover(about, () => dropdown.classList.add('ok'), () => dropdown.classList.remove('ok'))
+hover(dropdown, console.log('rien'),() => dropdown.classList.remove('ok'))
 
-alex.addEventListener('mouseleave', ()=> { alex.classList.remove('hoverimg'); 
-					 console.log('bye')})
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
 
-
-
-/* neil.addEventListener('mouseenter', ()=> console.log('aeln'))
-neil.addEventListener('mouseleave', ()=> console.log('bye')); */
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
