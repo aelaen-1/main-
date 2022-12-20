@@ -511,6 +511,8 @@ opacity: 1 ;
     margin: 0;
 	padding-top: 50px; 
 	width: 120px; 	
+	border-bottom-left-radius: 5px; 
+	border-bottom-right-radius: 5px
 }
 
 .menu .sousmenu li {
